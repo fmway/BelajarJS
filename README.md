@@ -1,0 +1,2 @@
+# BelajarJS
+Javascript dulu gaksih
