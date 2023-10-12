@@ -1,2 +1,2 @@
 # BelajarJS
-Javascript dulu gaksih
+Pemrograman Internet Pertemuan 6
