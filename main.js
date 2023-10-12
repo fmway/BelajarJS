@@ -28,7 +28,7 @@
   // document.write("Keep Trying Bruh :(");
 // }
 
-let [x, y] = [6, 3];
+// let [x, y] = [6, 3];
 // console.log(`x = ${x}`);
 // console.log(`y = ${y}`);
 
@@ -38,11 +38,22 @@ let [x, y] = [6, 3];
 // console.log(`d) (x == 6 || y == 5) => ${x == 6 || y == 6}`);
 // console.log(`e) !(x == y) => ${!(x == y)}`);
 
-const body = document.querySelector('body');
+// const body = document.querySelector('body');
+//
+// body.innerHTML += `x = ${x}, y = ${y}<br/>`;
+// body.innerHTML += `a) (x < 10 && y > 1) => ${x < 10 && y > 1}<br/>`;
+// body.innerHTML += `b) (x < 10 && y < 1) => ${x < 10 && y < 1}<br/>`;
+// body.innerHTML += `c) (x == 5 || y == 5) => ${x == 5 || y == 5}<br/>`;
+// body.innerHTML += `d) (x == 6 || y == 5) => ${x == 6 || y == 6}<br/>`;
+// body.innerHTML += `e) !(x == y) => ${!(x == y)}<br/>`;
 
-body.innerHTML += `x = ${x}, y = ${y}<br/>`;
-body.innerHTML += `a) (x < 10 && y > 1) => ${x < 10 && y > 1}<br/>`;
-body.innerHTML += `b) (x < 10 && y < 1) => ${x < 10 && y < 1}<br/>`;
-body.innerHTML += `c) (x == 5 || y == 5) => ${x == 5 || y == 5}<br/>`;
-body.innerHTML += `d) (x == 6 || y == 5) => ${x == 6 || y == 6}<br/>`;
-body.innerHTML += `e) !(x == y) => ${!(x == y)}<br/>`;
+// const value = document.querySelector('p #hasil');
+// const button = document.querySelector('button');
+// const input = document.querySelector('input#input_form')
+//
+// button.addEventListener('click', function(event) {
+//   let isi = input.value;
+//   console.log(isi);
+//   value.innerText = isi;
+//   event.preventDefault();
+// })
