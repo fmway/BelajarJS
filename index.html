@@ -38,15 +38,15 @@
     };
   </script>
   </head>
-  <body class="font-sans">
-    <div class="min-w-screen min-h-screen bg-violet-200 flex justify-center px-5 py-5">
+  <body class="font-sans bg-violet-200">
+    <div class="max-w-4xl min-h-min mx-auto sm:mt-24 flex justify-center px-5 py-5">
       <div class="w-full max-w-6xl mx-auto rounded-xl bg-white shadow-lg p-5 text-black">
-        <h1 class="font-bold text-4xl text-center pt-5 mb-20">Todo List</h1>
+        <h1 class="font-bold text-4xl text-center pt-5 mb-5">Todo List</h1>
         <div class="grid grid-cols-5 gap-4 mb-5">
-          <input class="p-2 border col-span-5 md:col-span-4 border-violet-500 w-full h-10 rounded-lg" type="text" name="text" value="" />
-          <button class="bg-violet-600 h-10 col-end-6 text-white font-bold rounded-lg">Add</button>
+          <input id="input" class="p-2 border col-span-5 sm:col-span-4 focus:outline-violet-700 focus:shadow-outline border-violet-300 w-full h-10 rounded-lg" type="text" name="text" value="" />
+          <button onclick="addTodo()" class="bg-violet-600 h-10 col-start-4 sm:col-start-5 col-end-6 hover:bg-violet-700 active:bg-violet-300 active:text-slate-700 text-white font-bold rounded-lg">Add</button>
         </div>
-        <div class="rounded-lg border border-violet-400 p-5"></div>
+        <div id="list-todo"></div>
       </div>
     </div>
 <!--    <form>-->
