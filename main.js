@@ -87,7 +87,8 @@ const addTodo = () => {
   // when checkbox changes to checked, the next element will be strikethrough / line through
   checkbox.addEventListener("change", (e) => {
     const text = e.target.nextElementSibling;
-    text.classList.toggle('line-through')
+    text.classList.toggle('line-through');
+    text.classList.toggle('text-slate-500');
   });
   checkbox.value = value;
   checkbox.id = id;
