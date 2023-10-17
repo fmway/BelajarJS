@@ -127,6 +127,7 @@ const addTodo = () => {
 
   // drag button
   const dragbut = document.createElement("button");
+  dragbut.className = "drag";
   dragbut.innerHTML = `
     <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 14">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
@@ -143,4 +144,10 @@ const addTodo = () => {
   todo.appendChild(el);
 
   input.value = "";
+  
+  // FInallly, for dragging, i use sortable js to handle it
+  new Sortable(todo, {
+      handle: '.drag',
+      animation: 150
+  });
 };
