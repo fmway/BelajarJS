@@ -83,13 +83,6 @@ const addTodo = () => {
   const checkbox = document.createElement("input");
   checkbox.className = "basis-1/12";
   checkbox.type = "checkbox";
-
-  // when checkbox changes to checked, the next element will be strikethrough / line through
-  checkbox.addEventListener("change", (e) => {
-    const text = e.target.nextElementSibling;
-    text.classList.toggle('line-through');
-    text.classList.toggle('text-slate-500');
-  });
   checkbox.value = value;
   checkbox.id = id;
 
@@ -98,6 +91,12 @@ const addTodo = () => {
   label.className = "basis-10/12";
   label.htmlFor = id;
   label.innerText = value;
+
+  // when checkbox changes to checked, the next element will be strikethrough / line through
+  checkbox.addEventListener("change", () => {
+    label.classList.toggle('line-through');
+    label.classList.toggle('text-slate-500');
+  });
 
   // button have two action
   const buttons = document.createElement("div");
@@ -110,30 +109,22 @@ const addTodo = () => {
       <path d="M 10 2 L 9 3 L 3 3 L 3 5 L 21 5 L 21 3 L 15 3 L 14 2 L 10 2 z M 4.3652344 7 L 6.0683594 22 L 17.931641 22 L 19.634766 7 L 4.3652344 7 z" />
     </svg>`;
 
-  // when delete button is clicked, it will be remove the super div / super container
-  delbut.addEventListener("click", (e) => {
-    // there are several possible elements to click
-    let parent = e.target.parentElement.parentElement; // maybe button is clicked
-    if (e.target.tagName == "path") { // or the path is clicked
-      parent = parent.parentElement.parentElement;
-    } else if (e.target.tagName == "svg") { // or the svg is clicked
-      parent = parent.parentElement;
-    }
-    const ancestor = parent.parentElement; // ancestor is the same as list-todo, you can remove this
-    parent.remove();
-    if (!ancestor.hasChildNodes()) { // this will remove the border and padding rather than changing it to display none
-      ancestor.className = "";
-    }
-  });
-
-  // drag button
+  // seccond is drag button
   const dragbut = document.createElement("button");
-  dragbut.className = "drag";
+  dragbut.className = "drag hidden sm:block";
   dragbut.innerHTML = `
     <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 14">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
     </svg>
   `;
+
+  // when delete button is clicked, it will be remove the super div / super container
+  delbut.addEventListener("click", () => {
+    el.remove();
+    if (!todo.hasChildNodes()) { // this will remove the border and padding rather than changing it to display none
+      todo.className = "";
+    }
+  });
 
   buttons.appendChild(delbut);
   buttons.appendChild(dragbut);
@@ -147,6 +138,7 @@ const addTodo = () => {
   input.value = "";
   
   // FInallly, for dragging, i use sortable js to handle it
+  // Sortable js only support in desktop browser like chrome and firefox. On android i can't drop the element
   new Sortable(todo, {
       handle: '.drag',
       animation: 150
